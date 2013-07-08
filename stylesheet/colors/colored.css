@@ -1,0 +1,149 @@
+body {
+	color:rgba(255,255,255,0.9);
+	text-shadow:1px 1px 0px rgba(0,0,0,0.15);
+	background:#f8f8f8;
+}
+
+#top, header.title .back-to-blog, .comment-form input.submit,
+.search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit {
+	color:#fff;
+	background-color:#DB9478;
+}
+
+#top {
+	box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+#top a {
+	color:#fff;
+}
+
+#content {
+	background-color:#7A5A67;
+}
+
+header, article, .share, .social-links, .comment {
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	box-shadow:0 1px 0 rgba(0,0,0,0.1);
+}
+
+header h1, article h2 a {
+	text-shadow:1px 1px 2px rgba(0,0,0,0.2);
+}
+
+header h1, header.title h2, article h2 a:hover, .comments h2, .comment h3, .share a, #cancel-comment-reply-link {
+	color:#fff;
+}
+
+header p, header.title p {
+	color:rgba(255,255,255,0.8);
+}
+
+article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
+.comment .reply:hover, article h2 a, .logged_user a {
+	color:#DB9478;
+}
+
+.pagination .wp-pagenavi a, .contact-form input.submit:focus, .comment-form input.submit:focus {
+	background-color: #57414a;
+	color: #fff;
+}
+
+.pagination a:hover, .social-links a:hover {
+	color:#fff;
+	background-color:#DB9478;
+}
+
+.pagination .wp-pagenavi span, .pagination .wp-pagenavi span.current, .comment .comment-reply-link {
+	border: 1px solid rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.5);
+}
+
+/* Forms */
+
+.comment .comment, .comment #respond, #respond + .comment {
+	border-top:1px solid rgba(255,255,255,0.2);
+	box-shadow:0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.comment h3 span {
+	color:rgba(255,255,255,0.5);
+}
+
+.comment .comment-reply-link:hover {
+	color:#fff;
+	background-color:#DB9478;
+	border-color:rgba(255,255,255,0);
+}
+
+.comment .comment-reply-link:active {
+	color:#fff;
+	border-color:rgba(255,255,255,0.5);
+}
+
+.comment-form input, .comment-form textarea, .contact-form input, .contact-form textarea {
+	text-shadow:0 0 0 #fff;
+	border:1px solid rgba(255,255,255,0.2);
+	box-shadow:0 0 0 #fff !important;
+	outline:0 none;
+}
+
+.comment-form input::-webkit-input-placeholder, .contact-form input::-webkit-input-placeholder { color:#fff; }
+.comment-form input::-moz-placeholder, .contact-form input::-moz-placeholder { color:#fff; } /* firefox 19+ */
+.comment-form input:-ms-input-placeholder, .contact-form input:-ms-input-placeholder { color:#fff; } /* ie */
+.comment-form input:-moz-placeholder, .contact-form input:-moz-placeholder { color:#fff; }
+
+.comment-form textarea, .comment-form input, .contact-form input, .contact-form textarea {
+	color:rgba(255,255,255,0.5);
+}
+.comment-form textarea:focus, .comment-form input:focus, .contact-form input:focus, .contact-form textarea:focus {
+	color:#222;
+}
+
+/* Menu*/
+
+.menu-opened #main-menu {
+	background-color:#222;
+}
+
+#searchform #searchsubmit {
+	background-color:#7A5A67;
+}
+
+#searchform #searchsubmit:hover {
+	color:#222;
+	background-color:#fff;
+}
+
+/* Footer */
+
+.social-links, footer {
+	text-shadow:0 0 0 #fff;
+}
+
+footer {
+	background-color:#fff;
+	text-shadow:0 0 0 #fff;
+}
+
+footer p {
+	color:#aeaeae;
+}
+
+footer a {
+	color:#DB9478;
+}
+
+/* Shortcodes */
+
+.btn {
+	background-color:#DB9478;
+}
+
+.btn:hover {
+	opacity:0.9;
+}
+
+.btn:active, .btn:focus {
+	opacity:1;
+}

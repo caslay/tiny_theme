@@ -1,0 +1,52 @@
+body {
+	color:#222;
+	background:#f8f8f8;
+}
+
+#top, footer, header.title .back-to-blog, .comment-form input.submit, .pagination a:hover,
+.search .content input.submit, .subscribe input.submit {
+	color:#fff;
+	background-color:#49c9e0;
+}
+
+article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
+.comment .reply:hover, article h2 a {
+	color:#49c9e0;
+}
+
+.pagination span {
+	border: 1px solid #e9e9e9;
+	color: #999;
+}
+
+#top a {
+	color:#fff;
+}
+
+header h1, article h2 a:hover {
+	color:#222;
+}
+
+header, article {
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	box-shadow:0 1px 0 rgba(0,0,0,0.1);
+}
+
+#content {
+	background-color:#fff;
+}
+
+.comment .reply:hover {
+	border-color:rgba(0,0,0,0.2);
+}
+
+.comment .reply:active {
+	color:rgba(73,202,224,0.8);
+	border-color:#49c9e0;
+	text-shadow: 1px 1px 0 #fff;
+	box-shadow:1px 1px 3px #fff;
+}
+
+.menu-opened #main-menu {
+	background-color:#2f2f2f;
+}
