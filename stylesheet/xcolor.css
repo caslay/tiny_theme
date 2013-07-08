@@ -1,0 +1,30 @@
+body {
+	color:#222;
+	background:#f8f8f8;
+}
+
+#top {
+	background-color:#2dd0e3;
+}
+
+#top a {
+	color:#fff;
+}
+
+header, article {
+	border-bottom:1px solid #fff;
+	box-shadow:0 1px 0 rgba(0,0,0,0.1);
+}
+
+.menu-opened #main-menu {
+	background-color:#f8f8f8;
+}
+
+#main-menu ul li {
+	border-bottom:1px #fff;
+	box-shadow:0 1px 0 rgba(0,0,0,0.1);
+}
+
+#main-menu ul li a {
+	color:#222;
+}
