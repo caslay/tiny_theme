@@ -7,7 +7,7 @@
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="<?php bloginfo('name'); ?>">
 	<?php
-	//Color Switcher Cases
+	//Color Switcher function
 	switch(get_option('tiny_style')){
 					case "aqua":
 		    	$color = "aqua";
