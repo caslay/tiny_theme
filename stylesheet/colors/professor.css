@@ -6,7 +6,7 @@ body {
 #top, header.title .back-to-blog, .comment-form input.submit,
 .search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit {
 	color:#fff;
-	background-color:#4E9CB5;
+	background-color:#5D656C;
 }
 
 #top {
@@ -40,7 +40,7 @@ article h2 a {
 
 article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 .comment .reply:hover, article h2 a:hover, .logged_user a {
-	color:#4E9CB5;
+	color:#5D656C;
 }
 
 .pagination .wp-pagenavi a, .contact-form input.submit:focus, .comment-form input.submit:focus {
@@ -50,7 +50,7 @@ article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 
 .pagination a:hover, .social-links a:hover {
 	color:#fff;
-	background-color:#4E9CB5;
+	background-color:#5D656C;
 }
 
 .pagination .wp-pagenavi span, .pagination .wp-pagenavi span.current, .comment .comment-reply-link {
@@ -71,12 +71,12 @@ article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 
 .comment .comment-reply-link:hover {
 	color:#fff;
-	background-color:#4E9CB5;
+	background-color:#5D656C;
 	border-color:rgba(255,255,255,0);
 }
 
 .comment .comment-reply-link:active {
-	color:#4E9CB5;
+	color:#5D656C;
 	background-color:transparent;
 	border-color:rgba(0,0,0,0.08);
 }
@@ -111,11 +111,11 @@ label.error {
 }
 
 #searchform #searchsubmit {
-	background-color:#4E9CB5;
+	background-color:#5D656C;
 }
 
 #searchform #searchsubmit:hover {
-	color:#4E9CB5;
+	color:#5D656C;
 	background-color:#fff;
 }
 
@@ -126,13 +126,13 @@ label.error {
 }
 
 footer a {
-	color:#4E9CB5;
+	color:#5D656C;
 }
 
 /* Shortcodes */
 
 .btn {
-	background-color:#4E9CB5;
+	background-color:#5D656C;
 }
 
 .btn:hover {

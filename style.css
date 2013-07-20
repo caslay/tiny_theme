@@ -264,8 +264,20 @@ article img.bordered {
 	float:right;
 }
 
-article .img-caption img {
+article .wp-caption {
+	max-width:100%;
+}
+
+article .wp-caption img, article .img-caption img, .gallery-icon img  {
 	margin-bottom:5px;
+}
+
+article .wp-caption-text  {
+	font-size:14px;
+	line-height:20px;
+	opacity:0.5;
+	display:block;
+	clear:both;
 }
 
 article .img-caption figure {
@@ -274,6 +286,29 @@ article .img-caption figure {
 	opacity:0.5;
 	display:block;
 	clear:both;
+}
+
+#gallery-1 .gallery-item {
+	margin-top:20px;
+}
+
+.alignright {
+    float:right;
+    text-align:right;
+    margin-left: 20px;
+}
+
+.alignleft {
+    float: left;
+    text-align:left;
+    margin-right: 20px;
+}
+
+.aligncenter {
+    display: block;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 article .dropcap {
@@ -389,6 +424,7 @@ header h1 {
 	font-size:172px;
 	line-height:182px;
 	margin-bottom:0;
+	text-indent: -10px;
 	color:#222;
 	font-family:"Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -513,7 +549,7 @@ header.title p span {
 
 .comment {
 	padding-bottom:40px;
-	margin-bottom:40px;
+	margin:20px 0;
 	border-bottom:1px solid #dedede;
 	box-shadow:0 1px 0 #fff;
 }
@@ -580,6 +616,20 @@ header.title p span {
 	padding-top:30px;
 }
 
+.comment.bypostauthor .comment_content {
+	background: none repeat scroll 0 0 #F5F5F5;
+    padding: 20px;
+}
+
+.comment.bypostauthor .comment.bypostauthor .comment_content {
+	margin-top:30px;
+}
+
+.comment.bypostauthor .comment.reader-comment .comment_content {
+	background: none transparent;
+    padding: 30px 0 0 0;
+}
+
 .comment #respond {
 	margin-left:50px;
 }
@@ -596,15 +646,25 @@ header.title p span {
 	padding:50px;
 }
 
-.comment-form h3, .contact-form h3 {
+.contact-form h3 {
 	margin:0 0 30px 0;
 }
 
-.comment-form div, .contact-form div {
+.comment-form h3 {
+	margin-bottom:0;
+}
+
+.comment-form p, .contact-form p {
 	width:100%;
 	clear:both;
 	overflow:hidden;
 	margin-bottom:10px;
+}
+
+.comment-form p.comment-notes {
+	margin-bottom:30px;
+	color:#7a7a7a;
+	font-size:14px;
 }
 
 .comment-form label, .contact-form label {
@@ -626,7 +686,7 @@ header.title p span {
 	height:200px;
 	font-size:14px;
 	font-family:Arial, Helvetica, sans-serif;
-	margin-bottom:10px;
+	margin-bottom:5px;
 }
 
 .comment-form input, .comment-form textarea, 
@@ -649,7 +709,17 @@ header.title p span {
 	border:1px solid #d8d8D8;
 }
 
-.comment-form input.submit, .contact-form input.submit {
+.comment-form .form-allowed-tags {
+	color:#7a7a7a;
+	font-size:14px;
+	margin-bottom:15px;
+}
+
+.comment-form .comment-form-comment label {
+	display:none;
+}
+
+.comment-form input#submit, .contact-form input#submit {
 	width:auto;
 	min-width:100px;
 	height:40px;
@@ -825,9 +895,9 @@ html, body, #main-menu {
 	margin:30px 0 50px 50px;
 }
 
-.pagination .wp-pagenavi span, .pagination .wp-pagenavi a {
+.pagination span, .pagination a {
 	display:inline-block;
-	width:15px;
+	min-width:15px;
 	padding:3px 5px;
 	border-radius:5px;
 	-moz-border-radius:5px;
@@ -837,19 +907,19 @@ html, body, #main-menu {
 	margin-right:5px;
 }
 
-.pagination .wp-pagenavi a {
+.pagination a {
 	color:#fff;
 	background-color:#222;
 	text-decoration:none;
 	border:0 none;
 }
 
-.pagination .wp-pagenavi span, .pagination .wp-pagenavi span.current {
+.pagination span, .pagination span.current {
 	border:1px solid #e9e9e9;
 	color:#999;
 }
 
-.pagination .wp-pagenavi .pages {
+.pagination .pages {
 	display:none;
 }
 

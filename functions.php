@@ -1,6 +1,8 @@
 <?php 
-	define( 'TEMPPATH', get_bloginfo('stylesheet_directory'));
+	define( 'TEMPPATH', get_stylesheet_directory_uri());
 	define( 'IMAGES', TEMPPATH. "/images"); 
+	
+	if ( ! isset( $content_width ) ){$content_width = '100%';};
 	
 	//content limiter function
 	function content($limit) {
@@ -26,6 +28,8 @@
 	   )
 	 );
 	}
+	//RSS Support
+	add_theme_support( 'automatic-feed-links' );
 	
 	//Register Sidebar
 	if ( function_exists( 'register_sidebar' ) ) {
@@ -48,7 +52,7 @@
 			<div class="comment_content">
 				<h3><?php comment_author_link(); ?> <span><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')) . ' ago'; ?> </span></h3>
 		 		<?php if ($comment->comment_approved == '0') : ?>
-	     			<p class="waiting_approve"><?php _e('Your comment is awaiting moderation.') ?></p>
+	     			<p class="waiting_approve"><?php _e('Your comment is awaiting moderation.','my-text-domain') ?></p>
 	     			<?php comment_text(); ?>
 	     		<?php else : ?>
 				<?php comment_text(); ?>
@@ -67,28 +71,13 @@
 	}
 	add_action( 'comment_form_before', 'tiny_enqueue_comments_reply' );
 	
-	//required plugins alert
-	add_action('admin_notices', 'showAdminMessages');
-	function showAdminMessages(){
-		$plugin_messages = array();
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		// Download the wp-pagenavi plugin
-		if(!is_plugin_active( 'wp-pagenavi/wp-pagenavi.php' )){
-			$plugin_messages[] = 'Tiny theme requires you to install wp-pagenavi plugin, <a href="http://wordpress.org/extend/plugins/wp-pagenavi/">download it from here</a>.';
-		}
-		if(count($plugin_messages) > 0){
-			echo '<div id="message" class="error">';
-				foreach($plugin_messages as $message){
-					echo '<strong>'.$message.'</strong>';
-				}
-			echo '</div>';
-		}
-	}
+	
 	
 	 //removes extra 28px margin issue added by admin bar
 	function my_function_admin_bar(){ return false; }
 	add_filter( 'show_admin_bar' , 'my_function_admin_bar');
   
-require_once('includes/tiny-options.php');
-require_once('includes/shortcodes.php');
-require_once('includes/update_notifier.php');
+  
+include_once('includes/tiny-options.php');
+include_once('includes/shortcodes.php');
+include_once('includes/update_notifier.php');

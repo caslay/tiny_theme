@@ -59,7 +59,7 @@ function tiny_settings_page() {
 	        <th scope="row">Theme Color</th>
 	        <td>
 	            <select name="tiny_style">
-	            	<?php $styles = array('default','blue','green','red','aqua','magenta','orange'); ?>
+	            	<?php $styles = array('default','blue','browny','colorful','green','red','professor','magenta','xorange','orange','deepturq','sandmoney'); ?>
 	            	<option><?php print get_option('tiny_style'); ?></option>
 	            	<?php foreach($styles as $style): ?>
 	            	<?php if ($style != get_option('tiny_style') ): ?>
@@ -101,7 +101,7 @@ function tiny_settings_page() {
         </tr>            
     </table>
     <p class="submit">
-    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+    <input type="submit" class="button-primary" value="<?php _e('Save Changes','my-text-domain') ?>" />
     </p>
 </form>
 </div>

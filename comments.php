@@ -15,11 +15,13 @@
 			<p>your comment has been submited, it might take a while to be moderated.</p>
 		</article>
 		<div class="comment-form">
-	       <h3><?php comment_form_title( 'Leave a Comment', 'Leave a Reply to %s' ); ?></h3>
+	       
 			<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-		    <p>You must be <a href="<?php bloginfo('url'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to post a comment.</p>	
+		    <p>You must be <a href="<?php echo home_url() ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to post a comment.</p>	
 	        <?php else : ?>
-			<form method="post" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" id="comment_form">
+	        	<!-- you can use this instead of comment_form() function
+	        		
+				<form method="post" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" id="comment_form">
 				<?php if ( $user_ID ) : ?>
 	            <p class="logged_user">Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>.
 	            	<a href="<?php echo wp_logout_url(); ?>" title="Log out of this account">Logout</a>
@@ -44,6 +46,13 @@
 					<?php cancel_comment_reply_link() ?>
 				<?php do_action('comment_form', $post->ID); ?>
 			</form>
+			-->
+			
+			<?php comment_form(); ?>
+		</div>
+		<!-- Comments Pagination -->
+		<div class="pagination">
+			<?php echo paginate_comments_links() ?>
 		</div>
 	</div> 
 		<?php endif ?>

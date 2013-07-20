@@ -6,6 +6,12 @@ $(document).ready(function(){
 		$("html, body").animate({scrollTop : respondPos.top - 50});
 	});
 	
+	$(".comment").each(function(){
+		if(!$(this).hasClass("bypostauthor")){
+			$(this).addClass("reader-comment");
+		}
+	});
+	
     $("a.menu-btn").click(function(){
     	var $icon = $(this).children("i");
     	$("body").toggleClass("menu-opened");

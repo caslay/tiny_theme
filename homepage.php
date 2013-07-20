@@ -19,7 +19,7 @@ get_header()
 				
 				<?php while($home->have_posts()) : $home->the_post(); ?>
 					
-				<article>
+				<article id='<?php the_ID(); ?>' <?php post_class(); ?>>
 					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 					<?php the_excerpt() ?>
@@ -31,9 +31,29 @@ get_header()
 				
 					
 			<div class="pagination">
-				
-				 <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(array('query' => $home)); } ?> 
-				 
+			
+			<?php	
+				 global $home;
+					$total = $home->max_num_pages;
+					// only bother with the rest if we have more than 1 page!
+					if ( $total > 1 )  {
+					     // get the current page
+					     if ( !$current_page = get_query_var('page') )
+					          $current_page = 1;
+					     // structure of "format" depends on whether we're using pretty permalinks
+					     $format = get_option('permalink_structure')?'page/%#%/':'&page=%#%';
+					     echo paginate_links(array(
+					          'base' => get_pagenum_link(1) . '%_%',
+					          'format' => $format,
+					          'current' => $current_page,
+					          'total' => $total,
+					          'mid_size' => 4,
+					          'type' => 'plain'
+					     ));
+						}
+				 ?>
+			
+			
 			</div>
 			<?php endif; ?>
 		</div>

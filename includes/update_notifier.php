@@ -2,7 +2,7 @@
 // Constants for the theme name, folder and remote XML url
 define( 'NOTIFIER_THEME_NAME', 'Tiny Theme' ); // The theme name
 define( 'NOTIFIER_THEME_FOLDER_NAME', 'tiny_theme' ); // The theme folder name
-define( 'NOTIFIER_XML_FILE', 'http://caslay.com/tiny/notifier.xml' ); // The remote notifier XML file containing the latest version of the theme and changelog
+define( 'NOTIFIER_XML_FILE', 'http://caslay.com/tiny_theme/notifier.xml' ); // The remote notifier XML file containing the latest version of the theme and changelog
 define( 'NOTIFIER_CACHE_INTERVAL', 30 ); // The time interval for the remote XML cache in the database (21600 seconds = 6 hours)
 
 
@@ -11,7 +11,7 @@ define( 'NOTIFIER_CACHE_INTERVAL', 30 ); // The time interval for the remote XML
 function update_notifier_menu() {  
 	if (function_exists('simplexml_load_string')) { // Stop if simplexml_load_string funtion isn't available
 	    $xml = get_latest_theme_version(NOTIFIER_CACHE_INTERVAL); // Get the latest remote XML file on our server
-		$theme_data = get_theme_data(TEMPLATEPATH . '/style.css'); // Read theme current version from the style.css
+		$theme_data = wp_get_theme(); // Read theme current version from the style.css
 
 		if( (float)$xml->latest > (float)$theme_data['Version']) { // Compare current theme version with the remote XML version
 			add_dashboard_page( NOTIFIER_THEME_NAME . ' Theme Updates', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">New Updates</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
@@ -56,10 +56,10 @@ function update_notifier() {
 	<div class="wrap">
 
 		<div id="icon-tools" class="icon32"></div>
-		<h2><?php _e('Tiny Theme Update', 'tiny_theme'); ?></h2>
-	    <div id="message" class="updated below-h2"><p><?php _e('<strong>There is a new version of Tiny theme available.</strong> Visit <a style="text-decoration:underline;" href="http://caslay.com/download">Download Page</a> to see what\'s new and how to update.', 'tiny_theme'); ?></p></div>
+		<h2><?php _e('Tiny Theme Update', 'my-text-domain'); ?></h2>
+	    <div id="message" class="updated below-h2"><p><?php _e('<strong>There is a new version of Tiny theme available.</strong> Visit <a style="text-decoration:underline;" href="http://caslay.com/tiny">Download Page</a> to see what\'s new and how to update.', 'tiny_theme'); ?></p></div>
 		<div id="instructions">
-		    <p><?php _e('<strong>Please note:</strong> make a backup of Tiny Theme inside your WordPress installation folder <strong>', 'tiny_theme'); ?>/wp-content/themes/<?php echo NOTIFIER_THEME_FOLDER_NAME; ?>/</strong> before updating.</p>
+		    <p><?php _e('<strong>Please note:</strong> make a backup of Tiny Theme inside your WordPress installation folder <strong>', 'my-text-domain'); ?>/wp-content/themes/<?php echo NOTIFIER_THEME_FOLDER_NAME; ?>/</strong> before updating.</p>
 		</div>
 	</div>
     
@@ -86,7 +86,7 @@ function get_latest_theme_version($interval) {
 			$cache = curl_exec($ch);
 			curl_close($ch);
 		} else {
-			$cache = file_get_contents($notifier_file_url); // ...if not, use the common file_get_contents()
+			$cache = wp_remote_get($notifier_file_url); // ...if not, use the common file_get_contents()
 		}
 
 		if ($cache) {			

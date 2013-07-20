@@ -70,7 +70,7 @@ get_header() ?>
 						//-------------------
 						$.ajax({
 								type: "POST",
-								url: "<?php echo bloginfo("template_url");?>/mailsend.php",
+								url: "<?php echo get_template_directory_uri() ?>/mailsend.php",
 								data: $(this).serialize(),
 								success: function(data) {
 									if (data == "true"){
