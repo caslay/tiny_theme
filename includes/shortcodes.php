@@ -18,7 +18,7 @@ add_shortcode('youtube', 'shortcode_youtube');
 
 		
 
-			return '<div><iframe title="YouTube video player" width="' . $atts['width'] . '" height="' . $atts['height'] . '" src="http://www.youtube.com/embed/' . $atts['id'] . '" frameborder="0" allowfullscreen></iframe></div>';
+			return '<div class="video-holder"><iframe title="YouTube video player" width="' . $atts['width'] . '" height="' . $atts['height'] . '" src="http://www.youtube.com/embed/' . $atts['id'] . '" frameborder="0" allowfullscreen></iframe></div>';
 
 	}
 
@@ -43,7 +43,7 @@ add_shortcode('vimeo', 'shortcode_vimeo');
 
 		
 
-			return '<div><iframe src="http://player.vimeo.com/video/' . $atts['id'] . '" width="' . $atts['width'] . '" height="' . $atts['height'] . '" frameborder="0"></iframe></div>';
+			return '<div class="video-holder" ><iframe src="http://player.vimeo.com/video/' . $atts['id'] . '" width="' . $atts['width'] . '" height="' . $atts['height'] . '" frameborder="0"></iframe></div>';
 
 	}
 

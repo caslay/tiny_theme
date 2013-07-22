@@ -59,7 +59,7 @@ function tiny_settings_page() {
 	        <th scope="row">Theme Color</th>
 	        <td>
 	            <select name="tiny_style">
-	            	<?php $styles = array('default','blue','browny','colorful','green','red','professor','magenta','xorange','orange','deepturq','sandmoney'); ?>
+	            	<?php $styles = array('default','blue','browny','colorful','green','red','professor','magenta','orange','deepturq','sandmoney'); ?>
 	            	<option><?php print get_option('tiny_style'); ?></option>
 	            	<?php foreach($styles as $style): ?>
 	            	<?php if ($style != get_option('tiny_style') ): ?>

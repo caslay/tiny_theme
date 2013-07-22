@@ -39,7 +39,7 @@ article h2 a {
 }
 
 article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
-.comment .reply:hover, article h2 a:hover, .logged_user a {
+.comment .reply:hover, article h2 a:hover, .logged_user a, .logged-in-as a {
 	color:#C62626;
 }
 

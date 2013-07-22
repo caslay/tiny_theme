@@ -1,6 +1,6 @@
-//////////////////////////////////////////////////////////////////
+tinyMCE.init({                force_p_newlines: false});//////////////////////////////////////////////////////////////////
 // Add Youtube button
-//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
 (function() {  
     tinymce.create('tinymce.plugins.youtube', {  
         init : function(ed, url) {  
@@ -74,7 +74,7 @@
                 title : 'Add a button',  
                 image : url+'/button-button.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[button class="e.g. big, small or leave blank for normal size" link="http://" target=""]Text here[/button]');  
+                     ed.selection.setContent('[button link="http://" target=""]Text here[/button]');  
   
                 }  
             });  
@@ -337,7 +337,7 @@
                 title : 'Add image',  
                 image : url+'/slider-icon.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[image style=" eg. round, bordered or leave blank" align="eg . center, right or left" float="eg . center, right or left" caption="" image_link="" /]');
+                     ed.selection.setContent('[image caption="" image_link="" /]');
                 }  
             });  
         },  

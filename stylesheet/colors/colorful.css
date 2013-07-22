@@ -40,11 +40,11 @@ header p, header.title p {
 }
 
 article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
-.comment .reply:hover, article h2 a, .logged_user a {
+.comment .reply:hover, article h2 a, .logged_user a, .logged-in-as a {
 	color:#DB9478;
 }
 
-.pagination .wp-pagenavi a, .contact-form input.submit:focus, .comment-form input.submit:focus {
+.pagination a, .contact-form input.submit:focus, .comment-form input.submit:focus {
 	background-color: #57414a;
 	color: #fff;
 }
@@ -54,7 +54,7 @@ article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 	background-color:#DB9478;
 }
 
-.pagination .wp-pagenavi span, .pagination .wp-pagenavi span.current, .comment .comment-reply-link {
+.pagination span, .pagination span.current, .comment .comment-reply-link {
 	border: 1px solid rgba(255,255,255,0.2);
 	color: rgba(255,255,255,0.5);
 }
@@ -98,6 +98,10 @@ article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 }
 .comment-form textarea:focus, .comment-form input:focus, .contact-form input:focus, .contact-form textarea:focus {
 	color:#222;
+}
+
+.comment-form .form-allowed-tags {
+	color:rgba(255,255,255,0.7);
 }
 
 /* Menu*/
