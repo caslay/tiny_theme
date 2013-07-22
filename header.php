@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="<?php bloginfo('name'); ?>">
-
 	
     <!-- styles -->
     <link href="<?php echo get_template_directory_uri() ?>/stylesheet/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo get_template_directory_uri() ?>/stylesheet/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
    
-    <?php //load theme color style if it's not default
+    <?php //load theme style if it's not default
     $style = get_option('tiny_style');
-    if($style !='default'): ?>
+    if($style != 'default'): ?>
     <link href="<?php echo get_template_directory_uri() ?>/stylesheet/colors/<?php echo $style ?>.css" rel="stylesheet">
     <?php endif; ?>
     

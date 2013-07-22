@@ -8,7 +8,7 @@
                 title : 'Add a Youtube video',  
                 image : url+'/button-youtube.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[youtube id="Enter video ID (eg. Wq4Y7ztznKc)" width="100%" height="auto"]');  
+                     ed.selection.setContent('[youtube id="Enter video ID (eg. Wq4Y7ztznKc)" width="100%" height="400"]');  
   
                 }  
             });  
@@ -30,7 +30,7 @@
                 title : 'Add a Vimeo video',  
                 image : url+'/button-vimeo.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[vimeo id="Enter video ID (eg. 10145153)" width="100%" height="auto"]');  
+                     ed.selection.setContent('[vimeo id="Enter video ID (eg. 10145153)" width="100%" height="400"]');  
   
                 }  
             });  
@@ -206,7 +206,7 @@
                 title : 'Add a toggle',  
                 image : url+'/button-toggle.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[toggles type=""][toggle title="title"]content[/toggle][toggle title="title"]content[/toggle][/toggle]');  
+                     ed.selection.setContent('[toggles type=""][toggle title="title"]content[/toggle][toggle title="title"]content[/toggle][/toggles]');  
                 }  
             });  
         },  
@@ -337,7 +337,7 @@
                 title : 'Add image',  
                 image : url+'/slider-icon.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[image style=" eg. round, bordered or leave blank" caption="" image_link="" /]');
+                     ed.selection.setContent('[image style=" eg. round, bordered or leave blank" align="eg . center, right or left" float="eg . center, right or left" caption="" image_link="" /]');
                 }  
             });  
         },  

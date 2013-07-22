@@ -244,7 +244,7 @@ article img.bordered {
 	border:4px solid rgba(0,0,0,0.1);
 }
 
-.center {
+.center, .align-center {
 	text-align:center;
 }
 
@@ -257,11 +257,13 @@ article img.bordered {
 }
 
 .float-left {
-	float:left;
+    float: left;
+    margin-right: 20px;
 }
 
 .float-right {
 	float:right;
+    margin-left: 20px;
 }
 
 article .wp-caption {
@@ -293,29 +295,27 @@ article .img-caption figure {
 }
 
 .alignright {
-    float:right;
     text-align:right;
-    margin-left: 20px;
 }
 
 .alignleft {
-    float: left;
     text-align:left;
-    margin-right: 20px;
 }
 
 .aligncenter {
-    display: block;
     text-align:center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 article .dropcap {
     margin-right: 10px;
+    float:left;
     font-size: 54px;
     line-height: 52px;
     font-weight: bold;
+}
+
+article.empty {
+	margin:0;
 }
 
 article ul.custom {
@@ -528,7 +528,7 @@ header.title p span {
 /* Comments */
 
 .comments {
-	padding: 50px;
+	padding: 50px 50px 0 50px;
 	overflow:hidden;
 }
 
@@ -548,20 +548,24 @@ header.title p span {
 }
 
 .comment {
-	padding-bottom:40px;
-	margin:20px 0;
-	border-bottom:1px solid #dedede;
-	box-shadow:0 1px 0 #fff;
+	margin:10px 0;
 }
 
 .comment_content {
+	padding:30px;
 	overflow: hidden;
+	border:1px solid #eee;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
 }
 
 .comment h3 {
 	font-size:22px;
 	line-height:22px;
 	margin-bottom:5px;
+	margin-top:0;
 	font-weight:normal;
 }
 
@@ -575,9 +579,9 @@ header.title p span {
 }
 
 .comment h3 span {
-	font-size:14px;
-	line-height:22px;
-	color:#bbbbbb;
+	font-size:12px;
+	line-height:18px;
+	color:#bbbbbb !important;
 }
 
 .comment p {
@@ -603,43 +607,31 @@ header.title p span {
 	clear:both;
 	overflow:hidden;
 	padding-left:50px;
-	margin-top:30px;
-	padding-bottom:0;
+}
+
+.comment .comment-content + .comment {
+	margin-top:20px;
+}
+
+.comment .comment:last-of-type {
 	margin-bottom:0;
-	border-bottom:0 none;
-	border-top:1px solid #dedede;
-	box-shadow:0 -1px 0 #fff;
 }
 
-.comment .comment .comment_content {
-	overflow:hidden;
-	padding-top:30px;
+.comment.reader-comment .comment.bypostauthor .comment_content:first-of-type,
+.comment.bypostauthor .comment_content:first-of-type {
+	background-color:#F3F3F3;
 }
 
-.comment.bypostauthor .comment_content {
-	background: none repeat scroll 0 0 #F5F5F5;
-    padding: 20px;
-}
-
-.comment.bypostauthor .comment.bypostauthor .comment_content {
-	margin-top:30px;
-}
-
-.comment.bypostauthor .comment.reader-comment .comment_content {
-	background: none transparent;
-    padding: 30px 0 0 0;
-}
-
-.comment #respond {
-	margin-left:50px;
+.comment.reader-comment .comment_content:first-of-type {
+	background-color:transparent;
 }
 
 #respond + .comment {
-	margin-top:30px;
+	margin-top:20px;
 }
 
 .comment-form {
-	padding:25px 50px 0 50px;
+	padding:25px 0 0 30px;
 }
 
 .contact-form {
@@ -654,7 +646,7 @@ header.title p span {
 	margin-bottom:0;
 }
 
-.comment-form p, .contact-form p {
+.comment-form p, .contact-form div {
 	width:100%;
 	clear:both;
 	overflow:hidden;
@@ -719,7 +711,7 @@ header.title p span {
 	display:none;
 }
 
-.comment-form input#submit, .contact-form input#submit {
+.comment-form input#submit, .contact-form input.submit {
 	width:auto;
 	min-width:100px;
 	height:40px;
@@ -733,7 +725,11 @@ header.title p span {
 }
 
 .comment #respond {
-	margin-top:30px;
+	margin-top:0;
+}
+
+.comment .comment-form {
+	padding:10px 0 0 50px;
 }
 
 .depth-1 + #respond .comment-form {
@@ -741,7 +737,11 @@ header.title p span {
 }
 
 #respond + .comment {
-	padding-top:20px;
+	padding-top:10px;
+}
+
+#respond .pagination {
+	margin:0;
 }
 
 #cancel-comment-reply-link {
@@ -1221,6 +1221,15 @@ a.back-to-top {
 	color:#858585;
 }
 
+span.clear {
+	display:block;
+	clear:both;
+	height:5px;
+	width:100%;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	margin-bottom:40px;
+}
+
 @media (max-width: 480px ) {
 	
 	.container {
@@ -1299,8 +1308,20 @@ a.back-to-top {
 	}
 	
 	.comment {
-		padding: 0 20px 20px 20px;
-		margin-bottom: 20px;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+	
+	.comment .comment_content {
+		padding: 15px;
+	}
+	
+	.comment .comment {
+		padding-left:15px;
+	}
+	
+	.comment .comment:last-of-type {
+	    margin-bottom: 0;
 	}
 	
 	.comment #respond {

@@ -108,6 +108,18 @@ add_shortcode('dropcap', 'shortcode_dropcap');
 
 }  
 	
+//linebreaker shortcode
+add_shortcode('linebreak', 'shortcode_line_break');
+
+	function shortcode_line_break() {  
+
+		
+
+		return '<span class="clear"></span>';  
+
+		
+
+}  	
 //buttons shortcode
 add_shortcode('button', 'shortcode_button');
 
@@ -169,14 +181,17 @@ add_shortcode('image', 'shortcode_image');
 
 	extract(shortcode_atts(array(
 
-        'caption'      => '',
+        'caption'  => '',
         'style' =>'',
-        'image_link' =>''
+        'image_link' =>'',
+        'align' =>'',
+        'float' => ''
+        
 
     ), $atts));
 
 
-	$out .= '<div class="img-caption">';
+	$out .= '<div class="img-caption align'. $align . ' float-'.$float.'">';
 	
 	$out .= '<img class="'.$style.'" src="'. $image_link . '" alt="" />';
 

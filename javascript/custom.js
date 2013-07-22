@@ -38,7 +38,7 @@ $(document).ready(function(){
     $("#cancel-comment-reply-link").text('Cancel');
     
 	if(!jQuery.browser.mobile){
-		$('a[title]').not(".comments a").tooltip();
+		$('article a[title], .menu-btn, .title a[title]').tooltip();
 	}
     
     $(window).scroll(function(){
