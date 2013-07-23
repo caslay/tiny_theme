@@ -11,7 +11,7 @@ define( 'NOTIFIER_CACHE_INTERVAL', 30 ); // The time interval for the remote XML
 function update_notifier_menu() {  
 	if (function_exists('simplexml_load_string')) { // Stop if simplexml_load_string funtion isn't available
 	    $xml = get_latest_theme_version(NOTIFIER_CACHE_INTERVAL); // Get the latest remote XML file on our server
-		$theme_data = wp_get_theme(); // Read theme current version from the style.css
+		$theme_data = wp_get_theme();; // Read theme current version
 
 		if( (float)$xml->latest > (float)$theme_data['Version']) { // Compare current theme version with the remote XML version
 			add_theme_page( NOTIFIER_THEME_NAME . ' Theme Updates', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">New Updates</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
@@ -78,8 +78,8 @@ function get_latest_theme_version($interval) {
 	// check the cache
 	if ( !$last || (( $now - $last ) > $interval) ) {
 	
-		$cache = wp_remote_get($notifier_file_url); // ...if not, use the common file_get_contents()
-		
+		$response = wp_remote_get($notifier_file_url); // ...get xml file content
+		$cache = wp_remote_retrieve_body($response); // .. extracting file data
 
 		if ($cache) {			
 			// we got good results	

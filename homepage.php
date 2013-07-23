@@ -10,7 +10,7 @@ get_header()
 				
 			<?php  $paged = get_query_var('page'); ?>
 		
-		    <?php $home = new WP_Query(array('post_type'=> 'post', 'posts_per_page' =>5, 'paged' => $paged)); ?>
+		    <?php $home = new WP_Query(array('post_type'=> 'post', 'posts_per_page' =>6, 'paged' => $paged)); ?>
 		
 		    <?php if($home->have_posts()): ?>
 		
@@ -18,8 +18,11 @@ get_header()
 			<div class="posts">
 				
 				<?php while($home->have_posts()) : $home->the_post(); ?>
-					
-				<article id='<?php the_ID(); ?>' <?php post_class(); ?>>
+					<?php if ( is_sticky() ): ?>
+				<article  id='<?php the_ID(); ?>' <?php post_class('sticky'); ?> >
+					<?php else: ?>
+				<article  id='<?php the_ID(); ?>' <?php post_class(); ?> >
+					<? endif ?>
 					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 					<?php the_excerpt() ?>

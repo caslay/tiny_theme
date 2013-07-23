@@ -5,12 +5,6 @@ Author: Caslay Family
 Theme URI: http://Caslay.com/tiny
 Author URI: http://caslay.com
 Version: 1.0
-Tags:  blue, green, orange, red, brown, fixed-width, threaded-comments, sticky-post, translation-ready, microformats
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 html, body, div, span, object, iframe,
@@ -203,7 +197,7 @@ p {
 /* Typography */
 
 article p, article img, article ul, article ol, article code, 
-article .img-caption {
+article .img-caption, .video-holder {
 	margin-bottom:40px;
 }
 
@@ -291,7 +285,7 @@ article .wp-caption img, article .img-caption img, .gallery-icon img  {
 	margin-bottom:5px;
 }
 
-article .wp-caption-text  {
+.wp-caption-text, .gallery-caption  {
 	font-size:14px;
 	line-height:20px;
 	opacity:0.5;
@@ -580,6 +574,15 @@ article {
 	line-height:26px;
 }
 
+article.sticky h2 span {
+	margin-left: 10px;
+    padding: 5px 10px;
+	display: inline-block;
+    vertical-align: middle;
+	font-size:12px;
+	line-height:12px;
+	border-radius:5px;
+}
 
 /* Post Title */
 
