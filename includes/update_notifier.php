@@ -14,7 +14,7 @@ function update_notifier_menu() {
 		$theme_data = wp_get_theme(); // Read theme current version from the style.css
 
 		if( (float)$xml->latest > (float)$theme_data['Version']) { // Compare current theme version with the remote XML version
-			add_dashboard_page( NOTIFIER_THEME_NAME . ' Theme Updates', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">New Updates</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
+			add_theme_page( NOTIFIER_THEME_NAME . ' Theme Updates', NOTIFIER_THEME_NAME . ' <span class="update-plugins count-1"><span class="update-count">New Updates</span></span>', 'administrator', 'theme-update-notifier', 'update_notifier');
 		}
 	}	
 }
@@ -31,7 +31,7 @@ function update_notifier_bar_menu() {
 		return;
 
 		$xml = get_latest_theme_version(NOTIFIER_CACHE_INTERVAL); // Get the latest remote XML file on our server
-		$theme_data = get_theme_data(TEMPLATEPATH . '/style.css'); // Read theme current version from the style.css
+		$theme_data = wp_get_theme(); // Read theme current version from the style.css
 
 		if( (float)$xml->latest > (float)$theme_data['Version']) { // Compare current theme version with the remote XML version
 			$wp_admin_bar->add_menu( array( 'id' => 'update_notifier', 'title' => '<span>' . NOTIFIER_THEME_NAME . ' <span id="ab-updates">New Updates</span></span>', 'href' => get_admin_url() . 'index.php?page=theme-update-notifier' ) );
@@ -45,7 +45,7 @@ add_action( 'admin_bar_menu', 'update_notifier_bar_menu', 1000 );
 // The notifier page
 function update_notifier() { 
 	$xml = get_latest_theme_version(NOTIFIER_CACHE_INTERVAL); // Get the latest remote XML file on our server
-	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css'); // Read theme current version from the style.css ?>
+	$theme_data = wp_get_theme(); // Read theme current version from the style.css ?>
 
 	<style>
 		.update-nag { display: none; }
@@ -77,17 +77,9 @@ function get_latest_theme_version($interval) {
 	$now = time();
 	// check the cache
 	if ( !$last || (( $now - $last ) > $interval) ) {
-		// cache doesn't exist, or is old, so refresh it
-		if( function_exists('curl_init') ) { // if cURL is available, use it...
-			$ch = curl_init($notifier_file_url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-			$cache = curl_exec($ch);
-			curl_close($ch);
-		} else {
-			$cache = wp_remote_get($notifier_file_url); // ...if not, use the common file_get_contents()
-		}
+	
+		$cache = wp_remote_get($notifier_file_url); // ...if not, use the common file_get_contents()
+		
 
 		if ($cache) {			
 			// we got good results	

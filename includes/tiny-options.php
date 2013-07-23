@@ -3,10 +3,10 @@
 add_action('admin_menu', 'tiny_create_menu');
 
 function tiny_create_menu() {
-
+	
     //create new submenu
-    add_submenu_page( 'themes.php', 'Theme Options', 'Tiny Options', 'manage_options', 'tiny-options-page', 'tiny_settings_page');
- 
+    add_theme_page( 'Theme Options', 'Tiny Options', 'administrator', 'tiny-options-page', 'tiny_settings_page');
+		
 }
 	//call register settings function
 add_action( 'admin_init', 'tiny_register_settings' );
