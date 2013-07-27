@@ -40,7 +40,14 @@
 <body <?php body_class($class); ?>>
 	<div id="top">
 		<div class="container">
-			<a href="<?php echo home_url() ?>" class="logo"><span>*</span><?php bloginfo('name'); ?></a>
+			<?php $logo_url = esc_url(get_option('logo')); ?>
+			<a href="<?php echo home_url() ?>" class="logo">
+				<?php if(!$logo_url): ?>
+				<span>*</span><?php bloginfo('name'); ?>
+				<?php else: ?>
+				<img src="<?php echo $logo_url ?>" />
+				<?php endif; ?>
+			</a>
 			<a href="#" class="menu-btn" data-placement="left" title="Main Menu">
 				<i class="icon-reorder"></i>
 			</a>

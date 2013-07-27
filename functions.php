@@ -34,10 +34,10 @@
 	//Register Sidebar
 	if ( function_exists( 'register_sidebar' ) ) {
 	 register_sidebar( array (
-	  'name' => __( 'Tiny UpperBar', 'primary-bar' ),
+	  'name' => __( 'Tiny UpperBar', 'tiny_theme' ),
 	  'id' => 'primary-widget-area',
 	  'class' => '',
-	  'description' => __( 'The primary widget area', 'dir' ),
+	  'description' => __( 'The primary widget area', 'tiny_theme' ),
 	  'before_widget' => '<div class="widget %2$s" id="%1$s" >',
 	  'after_widget' => "</div>",
 	  'before_title' => '<h3>',
@@ -52,7 +52,7 @@
 			<div class="comment_content">
 				<h3><?php comment_author_link(); ?> <span><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')) . ' ago'; ?> </span></h3>
 		 		<?php if ($comment->comment_approved == '0') : ?>
-	     			<p class="waiting_approve"><?php _e('Your comment is awaiting moderation.','my-text-domain') ?></p>
+	     			<p class="waiting_approve"><?php _e('Your comment is awaiting moderation.','tiny_thene') ?></p>
 	     			<?php comment_text(); ?>
 	     		<?php else : ?>
 				<?php comment_text(); ?>

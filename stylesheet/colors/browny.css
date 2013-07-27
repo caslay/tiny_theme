@@ -5,7 +5,8 @@ body {
 }
 
 #top, header.title .back-to-blog, .comment-form input.submit,
-.search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit {
+.search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit, 
+article.sticky h2 span {
 	color:#271c16;
 	background-color:#715842;
 	text-shadow:1px 1px 1px #8f7054;
@@ -113,30 +114,34 @@ article a, .comments a, header.title p a, .share a:hover, #main-menu h3,
 	background-color:#16100c;
 }
 
-#searchform div {
+#searchform div, #search-form div {
 	background-color:transparent;
 }
 
-#searchform div, #searchform input {
+#search-form div {
+	border-color:#8f7054;
+}
+
+#searchform div, #searchform input, #search-form div, #search-form input {
 	color:#bba78c;
 	outline:0 none;
 	background-color:transparent;
 }
 
-#searchform input::-webkit-input-placeholder { color:#bba78c; }
-#searchform input::-moz-placeholder { color:#bba78c; } /* firefox 19+ */
-#searchform input:-ms-input-placeholder { color:#bba78c; } /* ie */
-#searchform input:-moz-placeholder { color:#bba78c; }
+#searchform input::-webkit-input-placeholder, #search-form input::-webkit-input-placeholder { color:#bba78c; }
+#searchform input::-moz-placeholder, #search-form input::-moz-placeholder { color:#bba78c; } /* firefox 19+ */
+#searchform input:-ms-input-placeholder, #search-form input:-ms-input-placeholder { color:#bba78c; } /* ie */
+#searchform input:-moz-placeholder, #search-form input:-moz-placeholder { color:#bba78c; }
 
-#searchform input:focus {
+#searchform input:focus, #search-form input:focus {
 	color:#fff;
 }
 
-#searchform #searchsubmit {
+#searchform #searchsubmit, #search-form .submit {
 	background-color:#8f7054;
 }
 
-#searchform #searchsubmit:hover {
+#searchform #searchsubmit:hover, #search-form .submit:hover {
 	color:#8f7054;
 	background-color:#fff;
 }

@@ -1,34 +1,39 @@
-<?php
-get_header();
+<?php	
+//Template Name: 404
+get_header()
 ?>
 		<div class="container">
-			
-			<header>
-				<h1><?php single_cat_title() ?></h1>
+			<header class="header-404">
+				<h1>404</h1>
+				<p>Sorry page was not found, try to search again or take a look at our posts.</p>
 			</header>
-		
+			<section class="search-block">
+				<form role="search" method="get" id="search-form" action="http://caslay.com/tiny_theme/">
+					<div>
+						<label>Search for:</label>
+						<input type="text" value="" name="s" placeholder="Search Keywords">
+						<input type="submit" value="Search" class="submit">
+					</div>
+				</form>
+			</section>
 			<div class="posts">
-				
-				<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-					
+				<?php  $paged = get_query_var('paged'); ?>
+		   		<?php $p404 = new WP_Query(array('post_type'=> 'post', 'posts_per_page' =>6,'paged' => $paged)); ?>
+				<?php if($p404->have_posts()) : while($p404->have_posts()) : $p404->the_post(); ?>
 				<?php if ( is_sticky() ): ?>
 				<article  id='<?php the_ID(); ?>' <?php post_class('sticky'); ?> >
 					<?php else: ?>
 				<article  id='<?php the_ID(); ?>' <?php post_class(); ?> >
 					<?php endif; ?>
-					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-					<?php the_excerpt() ?>
+					<h2><a href="#"><?php the_title() ?></a></h2>
+					<p><?php the_excerpt() ?></p>
 				</article>
-				
 				<?php endwhile; ?>
-				
 			</div>
-			
 			<div class="pagination">
-				
 				<?php	
-				 global $wp_query;
-					$total = $wp_query->max_num_pages;
+				 global $p404; 
+					$total = $p404->max_num_pages;
 					// only bother with the rest if we have more than 1 page!
 					if ( $total > 1 )  {
 					     // get the current page
@@ -44,10 +49,9 @@ get_header();
 					          'mid_size' => 4,
 					          'type' => 'plain'
 					     ));
-						}
+						} 
 				 ?>
-				 
-			</div>	
+			</div>
 			<?php endif; ?>
 		</div>
 <?php get_footer()?>

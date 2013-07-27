@@ -1,4 +1,23 @@
 <?php 
+
+	function tiny_options_enqueue_scripts() {
+	wp_register_script( 'tiny-upload', get_template_directory_uri() .'/javascript/tiny-upload.js', array('jquery','media-upload','thickbox') );
+
+	if ( 'appearance_page_tiny-options-page' == get_current_screen() -> id ) {
+		wp_enqueue_script('jquery');
+
+		wp_enqueue_script('thickbox');
+		wp_enqueue_style('thickbox');
+
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('tiny-upload');
+
+		}
+
+	}
+	
+add_action('admin_enqueue_scripts', 'tiny_options_enqueue_scripts');
+	
 // create tiny_theme settings menu
 add_action('admin_menu', 'tiny_create_menu');
 
@@ -22,6 +41,8 @@ function tiny_register_settings() {
 	register_setting( 'tiny-settings-group', 'twitter_id' );
 	register_setting( 'tiny-settings-group', 'gplus_id' );
 	register_setting( 'tiny-settings-group', 'linkedin_id' );
+	register_setting( 'tiny-settings-group', 'logo' );
+	register_setting( 'tiny-settings-group', 'tiny_footer_text' );
 }
 
 function tiny_settings_page() {
@@ -49,12 +70,30 @@ function tiny_settings_page() {
         </tr>
         
         <tr>
+	        <th scope="row">Footer Text:</th>
+	        <td>
+	            <textarea name="tiny_footer_text" ><?php print get_option('tiny_footer_text'); ?></textarea>
+	        </td>
+        </tr>
+        
+        <tr>
 	        <th scope="row">Google Analytics Code:</th>
 	        <td>
 	            <textarea name="tiny_analytics"><?php print get_option('tiny_analytics'); ?></textarea>
 	        </td>
         </tr>
-        
+        <tr>
+        	<th>Logo</th>
+        	<td>
+	          <?php	$logo = get_option( 'logo' ); ?>
+		    	<span class='upload'>
+		        <input type='text' id='wptuts_logo' class='regular-text text-upload' name='logo' value='<?php print esc_url( $logo ); ?>'/>
+		        <input type='button' class='button button-upload' value='Upload an image'/></br>
+		        <img style='max-width: 300px; display: block;' src='<?php print esc_url( $logo ); ?>' class='preview-upload' />
+		    	</span>
+        	</td>
+        	
+        </tr>
         <tr>
 	        <th scope="row">Theme Color</th>
 	        <td>
@@ -101,7 +140,7 @@ function tiny_settings_page() {
         </tr>            
     </table>
     <p class="submit">
-    <input type="submit" class="button-primary" value="<?php _e('Save Changes','my-text-domain') ?>" />
+    <input type="submit" class="button-primary" value="<?php _e('Save Changes','tiny_theme') ?>" />
     </p>
 </form>
 </div>

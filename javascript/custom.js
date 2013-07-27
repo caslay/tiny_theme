@@ -80,4 +80,28 @@ $(document).ready(function(){
 	    	});
     	}
     });
+    typographyRefine();
+    function typographyRefine(){
+		$("article .clear").each(function(){
+			if($(this).next().is("br")){
+				$(this).next().remove();
+			}
+			if($(this).prev().is("br")){
+				$(this).prev().remove();
+			}
+		});
+		
+		$("article p").each(function(){
+			var clearHtml = $(this).children(".clear").html();
+			if($(this).is(":empty")){
+				$(this).remove();
+			}
+			if($(this).children().is(".clear")){
+				$(".clear", this).remove();
+				$(this).after('<span class="clear"></span>');
+			}
+		});
+		
+		$("article.sticky h2").append("<span>Featured</span>");
+    }
 });

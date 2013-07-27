@@ -4,7 +4,8 @@ body {
 }
 
 #top, header.title .back-to-blog, .comment-form input.submit,
-.search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit {
+.search .content input.submit, .subscribe input.submit, .comment-form input.submit, .contact-form input.submit, 
+article.sticky h2 span {
 	color:#fff;
 	background-color:#9EC1A7;
 }
@@ -110,16 +111,20 @@ label.error {
 	background-color:#222;
 }
 
-#searchform #searchsubmit {
+#searchform #searchsubmit, #search-form .submit {
 	background-color:#9EC1A7;
 }
 
-#searchform #searchsubmit:hover {
+#searchform #searchsubmit:hover, #search-form .submit:hover {
 	color:#9EC1A7;
 	background-color:#fff;
 }
 
 /* Footer */
+
+footer {
+	background-color:#f8f8f8;
+}
 
 .social-links, footer {
 	text-shadow:0 0 0 #fff;

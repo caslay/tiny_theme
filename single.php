@@ -70,7 +70,7 @@
 			<div class="posts">
 				<article>
 					<h2>No posts to display</h2>
-					<p><?php printf( __( 'Ready to publish your post? <a href="%s">Jump here</a>.', 'my-text-domain' ), admin_url( 'post-new.php' ) ); ?></p>
+					<p><?php printf( __( 'Ready to publish your post? <a href="%s">Jump here</a>.', 'tiny_theme' ), admin_url( 'post-new.php' ) ); ?></p>
 				</article>
 			</div>
 			<?php else :

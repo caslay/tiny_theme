@@ -56,10 +56,10 @@ function update_notifier() {
 	<div class="wrap">
 
 		<div id="icon-tools" class="icon32"></div>
-		<h2><?php _e('Tiny Theme Update', 'my-text-domain'); ?></h2>
+		<h2><?php _e('Tiny Theme Update', 'tiny_theme'); ?></h2>
 	    <div id="message" class="updated below-h2"><p><?php _e('<strong>There is a new version of Tiny theme available.</strong> Visit <a style="text-decoration:underline;" href="http://caslay.com/tiny">Download Page</a> to see what\'s new and how to update.', 'tiny_theme'); ?></p></div>
 		<div id="instructions">
-		    <p><?php _e('<strong>Please note:</strong> make a backup of Tiny Theme inside your WordPress installation folder <strong>', 'my-text-domain'); ?>/wp-content/themes/<?php echo NOTIFIER_THEME_FOLDER_NAME; ?>/</strong> before updating.</p>
+		    <p><?php _e('<strong>Please note:</strong> make a backup of Tiny Theme inside your WordPress installation folder <strong>', 'tiny_theme'); ?>/wp-content/themes/<?php echo NOTIFIER_THEME_FOLDER_NAME; ?>/</strong> before updating.</p>
 		</div>
 	</div>
     

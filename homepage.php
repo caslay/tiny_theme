@@ -22,7 +22,7 @@ get_header()
 				<article  id='<?php the_ID(); ?>' <?php post_class('sticky'); ?> >
 					<?php else: ?>
 				<article  id='<?php the_ID(); ?>' <?php post_class(); ?> >
-					<? endif ?>
+					<?php endif ?>
 					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 					<?php the_excerpt() ?>
