@@ -1,9 +1,22 @@
 <?php 
 	define( 'TEMPPATH', get_stylesheet_directory_uri());
 	define( 'IMAGES', TEMPPATH. "/images"); 
+	function tiny_setup(){
+		if ( ! isset( $content_width ) ){$content_width = '100%';};
+		add_theme_support('nav-menus');
+		if ( function_exists('register_nav_menus')) {
+		 register_nav_menus(
+		  array(
+		   'main-menu' => __( 'Primary menu' )
+		   )
+		 );
+		}
+		//RSS Support
+		add_theme_support( 'automatic-feed-links' );
 	
-	if ( ! isset( $content_width ) ){$content_width = '100%';};
+	}
 	
+	add_Action('after_theme_setup','tiny_setup');
 	//content limiter function
 	function content($limit) {
 		$content = explode(' ', get_the_content(), $limit);
@@ -20,19 +33,9 @@
 	}
 	
 	//add menu support to theme
-	add_theme_support('nav-menus');
-	if ( function_exists('register_nav_menus')) {
-	 register_nav_menus(
-	  array(
-	   'main-menu' => __( 'Primary menu' )
-	   )
-	 );
-	}
-	//RSS Support
-	add_theme_support( 'automatic-feed-links' );
 	
 	//Register Sidebar
-	if ( function_exists( 'register_sidebar' ) ) {
+	function tiny_sidebar(){
 	 register_sidebar( array (
 	  'name' => __( 'Tiny UpperBar', 'tiny_theme' ),
 	  'id' => 'primary-widget-area',
@@ -44,7 +47,7 @@
 	  'after_title' => '</h3>',
 	 ) );
 	}
-	
+	add_action('widgets_init','tiny_sidebar');
 	//custom comment function
 	function tiny_comment($comment, $args, $depth) {
 	   $GLOBALS['comment'] = $comment; ?>
