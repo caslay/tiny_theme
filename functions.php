@@ -80,4 +80,4 @@
   
 include_once('includes/tiny-options.php');
 include_once('includes/shortcodes.php');
-include_once('includes/update_notifier.php');
+include_once('includes/update-notifier.php');

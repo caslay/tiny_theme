@@ -1,19 +1,26 @@
 <?php 
 
-	function tiny_options_enqueue_scripts() {
-	wp_register_script( 'tiny-upload', get_template_directory_uri() .'/javascript/tiny-upload.js', array('jquery','media-upload','thickbox') );
+	if (is_admin())
+		add_action('wp_enqueue_scripts', 'tiny_options_enqueue_scripts');
 
-	if ( 'appearance_page_tiny-options-page' == get_current_screen() -> id ) {
-		wp_enqueue_script('jquery');
+	
 
-		wp_enqueue_script('thickbox');
-		wp_enqueue_style('thickbox');
-
-		wp_enqueue_script('media-upload');
-		wp_enqueue_script('tiny-upload');
-
+	if (!function_exists('tiny_options_enqueue_scripts')) {
+		function tiny_options_enqueue_scripts() {
+		  wp_register_script('tiny-upload',get_template_directory_uri().'/javascript/tiny-upload.js', array('jquery'), '1.7', true );
+  		  wp_register_script( 'home-page-main-flex-slider',  true );
+		if ( 'appearance_page_tiny-options-page' == get_current_screen() -> id ) {
+				wp_enqueue_script('jquery');
+		
+				wp_enqueue_script('thickbox');
+				wp_enqueue_style('thickbox');
+		
+				wp_enqueue_script('media-upload');
+				wp_enqueue_script('tiny-upload');
+	
+			}
+	
 		}
-
 	}
 	
 add_action('admin_enqueue_scripts', 'tiny_options_enqueue_scripts');
@@ -34,7 +41,6 @@ function tiny_register_settings() {
     register_setting( 'tiny-settings-group', 'tiny_head_title' );
     register_setting( 'tiny-settings-group', 'tiny_head_description' );
     register_setting( 'tiny-settings-group', 'tiny_adsense' );
-    register_setting( 'tiny-settings-group', 'tiny_analytics' );
  	register_setting( 'tiny-settings-group', 'tiny_style' );
 	register_setting( 'tiny-settings-group', 'contact_email' );
 	register_setting( 'tiny-settings-group', 'fb_id' );
@@ -76,12 +82,6 @@ function tiny_settings_page() {
 	        </td>
         </tr>
         
-        <tr>
-	        <th scope="row">Google Analytics Code:</th>
-	        <td>
-	            <textarea name="tiny_analytics"><?php print get_option('tiny_analytics'); ?></textarea>
-	        </td>
-        </tr>
         <tr>
         	<th>Logo</th>
         	<td>

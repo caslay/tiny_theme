@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="utf-8">
-    <title><?php bloginfo('name'); ?> <?php wp_title(' - ', true, 'left'); ?></title>
+    <title><?php wp_title(' - ', true, 'left'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="<?php bloginfo('name'); ?>">
@@ -33,9 +33,8 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<?php //comments_popup_script(); // off by default ?>
-    <?php wp_enqueue_script( 'comment-reply' ); ?>
+
     <?php  wp_head() ?>
-	<?php echo get_option('tiny_analytics') ?>
 </head>
 <body <?php body_class($class); ?>>
 	<div id="top">

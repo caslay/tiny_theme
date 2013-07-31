@@ -1,6 +1,7 @@
 /*
-Theme Name: Tiny Theme
+Theme Name: TinyPress
 Description: Blogging Clean, Responsive and Modern Free Theme.
+
 Author: Caslay Family
 Theme URI: http://Caslay.com/tiny
 Author URI: http://caslay.com
@@ -9,8 +10,39 @@ Version: 1.0
 Tags: green, gray, white, black, blue, orange, one-column, flexible-width, custom-menu, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options
 Text Domain: tiny_theme
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+TinyPress WordPress Theme, Copyright (C) 2003-2013 Caslay Family
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Theme uses the following resources
+
+Font Awesome - ​http://fortawesome.github.io/Font-Awesome/
+License: Font Awesome is fully open source and is GPL compatible
+Copyright: Dave Gandy, https://twitter.com/davegandy
+
+
+Detect Mobile Browser - ​http://detectmobilebrowsers.com/
+License: This is free and unencumbered software released into the public domain.
+Copyright: Chad Smith, https://twitter.com/chadsmith
+
+Bootstrap - ​http://twitter.github.io/bootstrap/
+License: Bootstrap is released under the Apache 2 license and is copyright 2013 Twitter
+Copyright: @mdo - @fat, https://twitter.com/fat - https://twitter.com/mdo
+
 */
 
 html, body, div, span, object, iframe,
@@ -541,6 +573,11 @@ header {
 	padding:50px;
 	border-bottom:1px solid #dedede;
 	box-shadow:0 1px 0 #fff;
+}
+
+header.header-404 {
+	border-bottom:0 none;
+	box-shadow:0 0 0 #fff;
 }
 
 header h1 {
@@ -1206,7 +1243,7 @@ a.back-to-top {
 	padding:0;
 }
 
-#searchform div {
+#searchform div, #search-form div {
 	width:100%;
 	padding:10px 15px;
 	height:55px;
@@ -1216,26 +1253,26 @@ a.back-to-top {
 	-moz-box-sizing:border-box;
 }
 
-#searchform label {
+#searchform label, #search-form label {
 	display:none;
 }
 
-#searchform input {
+#searchform input, #search-form input {
 	padding:5px 0;
 	width:75%;
 	height:25px;
-	font-size:24px;
+	font-size:18px;
 	color:#fff;
 	border:0 none;
 	background-color:#232323;
 }
 
-#searchform input::-webkit-input-placeholder { color:#636363; }
-#searchform input::-moz-placeholder { color:#636363; } /* firefox 19+ */
-#searchform input:-ms-input-placeholder { color:#636363; } /* ie */
-#searchform input:-moz-placeholder { color:#636363; }
+#searchform input::-webkit-input-placeholder, #search-form input::-webkit-input-placeholder { color:#636363; }
+#searchform input::-moz-placeholder, #search-form input::-moz-input-placeholder { color:#636363; } /* firefox 19+ */
+#searchform input:-ms-input-placeholder, #search-form input:-ms-input-placeholder { color:#636363; } /* ie */
+#searchform input:-moz-placeholder, #search-form input:-moz-input-placeholder { color:#636363; }
 
-#searchform #searchsubmit {
+#searchform #searchsubmit, #search-form .submit {
 	padding:5px 0;
 	width:20%;
 	height:35px;

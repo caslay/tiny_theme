@@ -25,7 +25,7 @@ get_header()
 					<?php else: ?>
 				<article  id='<?php the_ID(); ?>' <?php post_class(); ?> >
 					<?php endif; ?>
-					<h2><a href="#"><?php the_title() ?></a></h2>
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
 					<p><?php the_excerpt() ?></p>
 				</article>
 				<?php endwhile; ?>
