@@ -8,7 +8,7 @@ get_header()
 				<p>Sorry page was not found, try to search again or take a look at our posts.</p>
 			</header>
 			<section class="search-block">
-				<form role="search" method="get" id="search-form" action="http://caslay.com/tiny_theme/">
+				<form role="search" method="get" id="search-form" action="<?php bloginfo('url') ?>">
 					<div>
 						<label>Search for:</label>
 						<input type="text" value="" name="s" placeholder="Search Keywords">
