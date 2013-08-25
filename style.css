@@ -5,7 +5,7 @@ Description: Blogging Clean, Responsive and Modern Free Theme.
 Author: Caslay Family
 Theme URI: http://Caslay.com/tiny
 Author URI: http://caslay.com
-Version: 1.0
+Version: 1.1
 
 Tags: green, gray, white, black, blue, orange, one-column, flexible-width, custom-menu, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options
 Text Domain: tiny_theme
@@ -14,7 +14,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 TinyPress WordPress Theme, Copyright (C) 2003-2013 Caslay Family
-	
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -618,8 +618,11 @@ article {
 	line-height:26px;
 }
 
+article.sticky h2 a {
+	margin-right: 10px;
+}
+
 article.sticky h2 span {
-	margin-left: 10px;
     padding: 5px 10px;
 	display: inline-block;
     vertical-align: middle;
@@ -1031,6 +1034,7 @@ html, body, #main-menu {
 }
 
 #main-menu .container {
+	padding-top:120px;
 	padding-bottom:70px;
 }
 
@@ -1162,7 +1166,7 @@ a.back-to-top {
 }
 
 #main-menu ul.menu {
-	padding:120px 0 30px 0;
+	padding:0 0 30px 0;
 }
 
 #main-menu ul li {
@@ -1369,8 +1373,12 @@ a.back-to-top {
 	    font-size: 40px;
 	}
 	
+	#main-menu .container {
+		padding-top:60px;
+	}
+	
 	#main-menu ul.menu {
-		padding-top:50px;
+		padding-top:0;
 	}
 
 	#content {

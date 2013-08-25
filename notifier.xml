@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notifier>
+	<latest>1.0</latest>
+	<changelog>
+		<![CDATA[
+			<h4><strong>v1.0</strong> 7/18/2013</h4>
+			<ol>
+				<li>Version 1.0 has been officially released</li>
+			</ol>
+			
+		]]>
+	</changelog>
+</notifier>

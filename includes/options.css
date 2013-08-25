@@ -1,0 +1,58 @@
+.tinypress {
+	border:1px solid #f2f2f2;
+	border-radius:10px;
+	background-color:#f9f9f9;
+}
+
+.tinypress td {
+	padding:20px;
+	border-bottom:1px solid #f2f2f2;
+}
+
+.tinypress tr td:first-child {
+	width:150px;
+	font-size: 16px;
+    line-height: 22px;
+}
+
+.tinypress tr:nth-child(odd) td {
+	background-color:#fff;
+}
+
+.tinypress textarea, .tinypress input, .tinypress select {
+    padding: 10px;
+    width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.tinypress textarea, .tinypress input {
+	max-width:700px;
+}
+
+.tinypress select {
+    max-width: 200px;
+    height: 40px;
+}
+
+#wptuts_logo {
+	display:none;
+}
+
+.tinypress .logo img {
+	float:left;
+}
+
+.tinypress .button-upload {
+	width:150px;
+	height:40px;
+}
+
+.tinypress .logo img, .tinypress .button-upload {
+	margin-right:10px;
+}
+
+.tinypress .remove-btn {
+	display:none;
+	color:#971111;
+}

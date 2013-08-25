@@ -34,7 +34,7 @@ function tiny_create_menu() {
     add_theme_page( 'Theme Options', 'Tiny Options', 'administrator', 'tiny-options-page', 'tiny_settings_page');
 		
 }
-	//call register settings function
+//call register settings function
 add_action( 'admin_init', 'tiny_register_settings' );
 function tiny_register_settings() {
     //register theme settings
@@ -51,6 +51,15 @@ function tiny_register_settings() {
 	register_setting( 'tiny-settings-group', 'tiny_footer_text' );
 }
 
+// theme options css file
+add_action( 'admin_print_styles', 'mytheme_add_init' );
+function mytheme_add_init() {
+	$file_dir=get_bloginfo('template_directory');
+	wp_enqueue_style("functions", $file_dir."/includes/options.css", false, "1.0", "all");
+	wp_enqueue_script("rm_script", $file_dir."/includes/options.js", false, "1.0");
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_add_init' );
+
 function tiny_settings_page() {
 
 ?>
@@ -60,42 +69,43 @@ function tiny_settings_page() {
 
 <form id="landingOptions" method="post" action="options.php">
     <?php settings_fields( 'tiny-settings-group' ); ?>
-    <table class="form-table">
+    <table class="form-table tinypress">
       	<tr valign="top">
-	        <th scope="row">Header Title:</th>
+	        <td scope="row">Header Title:</td>
 	        <td>
 	            <textarea name="tiny_head_title" ><?php print get_option('tiny_head_title'); ?></textarea>
 	        </td>
         </tr>
         
         <tr>
-	        <th scope="row">Header Description:</th>
+	        <td scope="row">Header Description:</td>
 	        <td>
 	            <textarea name="tiny_head_description" ><?php print get_option('tiny_head_description'); ?></textarea>
 	        </td>
         </tr>
         
         <tr>
-	        <th scope="row">Footer Text:</th>
+	        <td scope="row">Footer Text:</td>
 	        <td>
 	            <textarea name="tiny_footer_text" ><?php print get_option('tiny_footer_text'); ?></textarea>
 	        </td>
         </tr>
         
-        <tr>
-        	<th>Logo</th>
+        <tr class="logo">
+        	<td>Logo</td>
         	<td>
 	          <?php	$logo = get_option( 'logo' ); ?>
 		    	<span class='upload'>
 		        <input type='text' id='wptuts_logo' class='regular-text text-upload' name='logo' value='<?php print esc_url( $logo ); ?>'/>
-		        <input type='button' class='button button-upload' value='Upload an image'/></br>
-		        <img style='max-width: 300px; display: block;' src='<?php print esc_url( $logo ); ?>' class='preview-upload' />
+		        <input type='button' class='button button-upload button-primary' value='Upload an image'/>
+		        <a href="#" class="remove-btn">Remove</a>
+		        <img src='<?php print esc_url( $logo ); ?>' class='preview-upload' />
 		    	</span>
         	</td>
         	
         </tr>
         <tr>
-	        <th scope="row">Theme Color</th>
+	        <td scope="row">Theme Color</td>
 	        <td>
 	            <select name="tiny_style">
 	            	<?php $styles = array('default','blue','browny','colorful','green','red','professor','magenta','orange','deepturq','sandmoney'); ?>
@@ -109,31 +119,31 @@ function tiny_settings_page() {
 	        </td>
         </tr>
         <tr>
-	        <th scope="row">Contact Email</th>
+	        <td scope="row">Contact Email</td>
 	        <td>
 	            <input type="text" name="contact_email" value="<?php print get_option('contact_email'); ?>"></input>
 	        </td>
         </tr>
         <tr>
-	        <th scope="row">Facebook page id</th>
+	        <td scope="row">Facebook page id</td>
 	        <td>
 	            <input type="text" name="fb_id" value="<?php print get_option('fb_id'); ?>"></input>
 	        </td>
         </tr>   
             <tr>
-	        <th scope="row">Twitter id</th>
+	        <td scope="row">Twitter id</td>
 	        <td>
 	            <input type="text" name="twitter_id" value="<?php print get_option('twitter_id'); ?>"></input>
 	        </td>
         </tr>   
         <tr>
-	        <th scope="row">Google+ id</th>
+	        <td scope="row">Google+ id</td>
 	        <td>
 	            <input type="text" name="gplus_id" value="<?php print get_option('gplus_id'); ?>"></input>
 	        </td>
         </tr>   
         <tr>
-	        <th scope="row">LinkedIn Profile Link</th>
+	        <td scope="row">LinkedIn Profile Link</td>
 	        <td>
 	            <input type="text" name="linkedin_id" value="<?php print get_option('linkedin_id'); ?>"></input>
 	        </td>
