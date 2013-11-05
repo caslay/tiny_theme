@@ -1,0 +1,70 @@
+{
+    "main":"public/javascripts/countersback.js",
+    "name":"Counters Back",
+    "description": "A sample CloudFlare application that brings counters back",
+    "version": "0.0.5b",
+    "category": "analytics",
+    "account": {
+        "callback_url": "http://countersback.herokuapp.com/api",
+        "user_fields": ["email"]
+    },
+    "billing": {
+        "type": "zone",
+        "plans":[
+            {
+                "name" : "Chowder",
+                "price": "3.20"
+            },
+            {
+                "name" : "Minestrone",
+                "price" : "6.55"
+            }
+        ]
+    },
+    "config":{
+        "details":{
+            "Category": "CloudFlare App example",
+            "Language": "English",
+            "Price": "Free to install.",
+            "Restrictions": "None",
+            "CloudFlare": "<a href='http://www.cloudflare.com/terms' target='_blank'>Terms of use</a>"
+        },
+        "assets":{
+            "logos" : {
+                "200px": "./public/images/logo-200.png",
+                "132px": "./public/images/logo-132.png"
+            },
+            "detail_page" : [
+                "./public/images/example.png"
+            ],
+            "images" : [
+                "./public/images/counter.png"
+            ]
+        },
+        "interface": [
+            {
+                "type": "string",
+                "name": "Favorite Food",
+                "description": "Please tell us your favorite food.",
+                "id": "food",
+                "domain_request": true
+            },
+            {
+                "id": "lottery",
+                "type": "select",
+                "name": "Do you Lotto?",
+                "description": "Choose whether to buy a ticket",
+                "options": [
+                    {
+                        "label": "Yes, buy a ticket!",
+                        "value": "true"
+                    },
+                    {
+                        "label": "No, I am scared.",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
