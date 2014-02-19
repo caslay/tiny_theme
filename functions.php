@@ -1,6 +1,19 @@
 <?php 
 	define( 'TEMPPATH', get_stylesheet_directory_uri());
 	define( 'IMAGES', TEMPPATH. "/images"); 
+
+	/**
+	 * Enqueue scripts and styles for the front end.
+	 */
+	add_action( 'wp_enqueue_scripts', 'tinytheme_scripts_and_styles_setup' );
+
+	function tinytheme_scripts_and_styles_setup() {
+		// Load the icon font stylesheet
+		wp_enqueue_style( 'tinytheme-icon-font', get_template_directory_uri() . '/stylesheet/font-awesome.min.css' );
+		wp_enqueue_style( 'tinytheme-icon-font-ie', get_template_directory_uri() . '/stylesheet/font-awesome-ie7.min.css', array( 'tinytheme-icon-font' ) );
+		wp_style_add_data( 'tinytheme-icon-font-ie', 'conditional', 'IE 7' );
+	}
+
 	function tiny_setup(){
 		if ( ! isset( $content_width ) ){$content_width = '100%';};
 		add_theme_support('nav-menus');

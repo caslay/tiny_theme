@@ -9,7 +9,6 @@
 	
     <!-- styles -->
     <link href="<?php echo get_template_directory_uri() ?>/stylesheet/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri() ?>/stylesheet/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
    
     <?php //load theme style if it's not default
@@ -19,9 +18,6 @@
     <?php endif; ?>
      
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <!--[if IE 7]>
-		<link href="<?php echo get_template_directory_uri() ?>/stylesheet/font-awesome-ie7.min.css" rel="stylesheet">
-	<![endif]-->
 	
     <script src="<?php echo get_template_directory_uri() ?>/javascript/jquery-1.9.1.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/javascript/bootstrap.min.js"></script>
