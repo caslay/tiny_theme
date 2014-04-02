@@ -5,9 +5,9 @@
 	<?php while ( have_posts() ) : the_post(); ?>
 		
 		<header class="title">
-			<a href="<?php echo home_url() ?>" class="back-to-blog"><i class="icon-chevron-left"></i><?php __( 'Back to blog', 'tiny_theme') ?></a>
+			<a href="<?php echo home_url() ?>" class="back-to-blog"><i class="icon-chevron-left"></i><?php echo __( 'Back to blog', 'tiny_theme') ?></a>
 			<h2><?php the_title() ?></h2>
-			<p><span><?php the_date() ?></span> - Posted in <?php the_category(' ,  '); ?> <span><?php __( 'Posted by:', 'tiny_theme') ?> <?php the_author_posts_link(); ?></span></p>
+			<p><span><?php the_date() ?></span> - Posted in <?php the_category(' ,  '); ?> <span><?php echo __( 'Posted by:', 'tiny_theme') ?> <?php the_author_posts_link(); ?></span></p>
 			<?php echo the_tags('<p>' . __( 'Tags: ', 'tiny_theme'), ', ', '</p>'); ?>
 		</header>
 		
@@ -69,7 +69,7 @@
 			?>
 			<div class="posts">
 				<article>
-					<h2><?php __( 'No posts to display', 'tiny_theme' ) ?></h2>
+					<h2><?php echo __( 'No posts to display', 'tiny_theme' ) ?></h2>
 					<p><?php printf( __( 'Ready to publish your post? <a href="%s">Jump here</a>.', 'tiny_theme' ), admin_url( 'post-new.php' ) ); ?></p>
 				</article>
 			</div>
@@ -78,8 +78,8 @@
 			?>
 			<div class="posts">
 					<article>
-						<h2><?php __( 'Unfortunately, this post either removed or deleted, there\'s also a probability that it didn\'t ever existed!!', 'tiny_theme') ?></h2>
-						<p><?php __( 'May be can search again to find your desired information:', 'tiny_theme') ?></p>
+						<h2><?php echo __( 'Unfortunately, this post either removed or deleted, there\'s also a probability that it didn\'t ever existed!!', 'tiny_theme') ?></h2>
+						<p><?php echo __( 'May be can search again to find your desired information:', 'tiny_theme') ?></p>
 					</article>
 			</div>
 			<?php endif; ?>

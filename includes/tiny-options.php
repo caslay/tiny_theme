@@ -65,47 +65,47 @@ function tiny_settings_page() {
 ?>
 <!-- theme options page start -->
 <div class="wrap">
-<h2><?php __( 'Tiny Settings', 'tiny_theme') ?></h2>
+<h2><?php echo __( 'Tiny Settings', 'tiny_theme') ?></h2>
 
 <form id="landingOptions" method="post" action="options.php">
     <?php settings_fields( 'tiny-settings-group' ); ?>
     <table class="form-table tinypress">
       	<tr valign="top">
-	        <td scope="row"><?php __( 'Header Title', 'tiny_theme') ?>:</td>
+	        <td scope="row"><?php echo __( 'Header Title', 'tiny_theme') ?>:</td>
 	        <td>
 	            <textarea name="tiny_head_title" ><?php print get_option('tiny_head_title'); ?></textarea>
 	        </td>
         </tr>
         
         <tr>
-	        <td scope="row"><?php __( 'Header Description', 'tiny_theme') ?>:</td>
+	        <td scope="row"><?php echo __( 'Header Description', 'tiny_theme') ?>:</td>
 	        <td>
 	            <textarea name="tiny_head_description" ><?php print get_option('tiny_head_description'); ?></textarea>
 	        </td>
         </tr>
         
         <tr>
-	        <td scope="row"><?php __( 'Footer Text', 'tiny_theme') ?>:</td>
+	        <td scope="row"><?php echo __( 'Footer Text', 'tiny_theme') ?>:</td>
 	        <td>
 	            <textarea name="tiny_footer_text" ><?php print get_option('tiny_footer_text'); ?></textarea>
 	        </td>
         </tr>
         
         <tr class="logo">
-			<td><?php __( 'Logo', 'tiny_theme') ?></td>
+			<td><?php echo __( 'Logo', 'tiny_theme') ?></td>
         	<td>
 	          <?php	$logo = get_option( 'logo' ); ?>
 		    	<span class='upload'>
 		        <input type='text' id='wptuts_logo' class='regular-text text-upload' name='logo' value='<?php print esc_url( $logo ); ?>'/>
 		        <input type='button' class='button button-upload button-primary' value='Upload an image'/>
-		        <a href="#" class="remove-btn"><?php __( 'Remove', 'tiny_theme') ?></a>
+		        <a href="#" class="remove-btn"><?php echo __( 'Remove', 'tiny_theme') ?></a>
 		        <img src='<?php print esc_url( $logo ); ?>' class='preview-upload' />
 		    	</span>
         	</td>
         	
         </tr>
         <tr>
-	        <td scope="row"><?php __( 'Theme Color', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'Theme Color', 'tiny_theme') ?></td>
 	        <td>
 	            <select name="tiny_style">
 	            	<?php $styles = array('default','blue','browny','colorful','green','red','professor','magenta','orange','deepturq','sandmoney'); ?>
@@ -119,31 +119,31 @@ function tiny_settings_page() {
 	        </td>
         </tr>
         <tr>
-	        <td scope="row"><?php __( 'Contact Email', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'Contact Email', 'tiny_theme') ?></td>
 	        <td>
 	            <input type="text" name="contact_email" value="<?php print get_option('contact_email'); ?>"></input>
 	        </td>
         </tr>
         <tr>
-	        <td scope="row"><?php __( 'Facebook page id', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'Facebook page id', 'tiny_theme') ?></td>
 	        <td>
 	            <input type="text" name="fb_id" value="<?php print get_option('fb_id'); ?>"></input>
 	        </td>
         </tr>   
             <tr>
-	        <td scope="row"><?php __( 'Twitter id', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'Twitter id', 'tiny_theme') ?></td>
 	        <td>
 	            <input type="text" name="twitter_id" value="<?php print get_option('twitter_id'); ?>"></input>
 	        </td>
         </tr>   
         <tr>
-	        <td scope="row"><?php __( 'Google+ id', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'Google+ id', 'tiny_theme') ?></td>
 	        <td>
 	            <input type="text" name="gplus_id" value="<?php print get_option('gplus_id'); ?>"></input>
 	        </td>
         </tr>   
         <tr>
-	        <td scope="row"><?php __( 'LinkedIn Profile Link', 'tiny_theme') ?></td>
+	        <td scope="row"><?php echo __( 'LinkedIn Profile Link', 'tiny_theme') ?></td>
 	        <td>
 	            <input type="text" name="linkedin_id" value="<?php print get_option('linkedin_id'); ?>"></input>
 	        </td>
