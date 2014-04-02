@@ -79,7 +79,7 @@
 			<div class="posts">
 					<article>
 						<h2><?php echo __( 'Unfortunately, this post either removed or deleted, there\'s also a probability that it didn\'t ever existed!!', 'tiny_theme') ?></h2>
-						<p><?php echo __( 'May be can search again to find your desired information:', 'tiny_theme') ?></p>
+						<p><?php echo __( 'Maybe can search again to find your desired information.', 'tiny_theme') ?></p>
 					</article>
 			</div>
 			<?php endif; ?>

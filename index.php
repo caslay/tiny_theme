@@ -31,7 +31,7 @@
 			<div class="posts">
 					<article>
 						<h2><?php echo __( 'Unfortunately, there are no posts to display!', 'tiny_theme') ?></h2>
-						<p><?php echo __( 'May be can search again to find your desired information:', 'tiny_theme') ?></p>
+						<p><?php echo __( 'Maybe can search again to find your desired information.', 'tiny_theme') ?></p>
 					</article>
 				</div>
 			<?php endif; ?>
