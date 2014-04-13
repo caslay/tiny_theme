@@ -5,12 +5,12 @@ get_header()
 		<div class="container">
 			<header class="header-404">
 				<h1>404</h1>
-				<p>Sorry page was not found, try to search again or take a look at our posts.</p>
+				<p><?php echo __( 'Sorry page was not found, try to search again or take a look at our posts.', 'tiny_theme') ?></p>
 			</header>
 			<section class="search-block">
 				<form role="search" method="get" id="search-form" action="<?php bloginfo('url') ?>">
 					<div>
-						<label>Search for:</label>
+						<label><?php echo __( 'Search for:', 'tiny_theme') ?></label>
 						<input type="text" value="" name="s" placeholder="Search Keywords">
 						<input type="submit" value="Search" class="submit">
 					</div>

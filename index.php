@@ -1,7 +1,7 @@
 <?php get_header() ?>
 	<div class="container">
 		<header>
-			<h2>Search Results:</h2>
+			<h2><?php echo __( 'Search Results:', 'tiny_theme') ?></h2>
 		</header>
 		<?php if ( have_posts() ) : ?>
 
@@ -21,7 +21,7 @@
 				?>
 				<div class="posts">
 					<article>
-						<h2>No posts to display</h2>
+						<h2><?php echo __( 'No posts to display', 'tiny_theme' ) ?></h2>
 						<p><?php printf( __( 'Ready to publish your post? <a href="%s">Jump here</a>.', 'tiny_theme' ), admin_url( 'post-new.php' ) ); ?></p>
 					</article>
 				</div>
@@ -30,8 +30,8 @@
 			?>
 			<div class="posts">
 					<article>
-						<h2>Unfortunately, there are no posts to display!</h2>
-						<p>May be can search again to find your desired information:</p>
+						<h2><?php echo __( 'Unfortunately, there are no posts to display!', 'tiny_theme') ?></h2>
+						<p><?php echo __( 'Maybe can search again to find your desired information.', 'tiny_theme') ?></p>
 					</article>
 				</div>
 			<?php endif; ?>

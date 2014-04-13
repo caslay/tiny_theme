@@ -27,24 +27,24 @@ get_header() ?>
 				</div>
 				<div class="contact-form">
 					<article style="display: none" id="sent-message">
-						<h2>Thank you, your message successfully sent</h2>
-						<p>Our inboxes are 24/7 ready to hear from you, if you want to ask a question or request a service just fill this 2 minutes form below which may help your life and giving you the ability to bring your vision into public just as you imagined.</p>
+						<h2><?php echo __( 'Thank you, your message successfully sent', 'tiny_theme') ?></h2>
+						<p><?php echo __( 'Our inboxes are 24/7 ready to hear from you, if you want to ask a question or request a service just fill this 2 minutes form below which may help your life and giving you the ability to bring your vision into public just as you imagined.', 'tiny_theme') ?></p>
 					</article>
 					<article style="display: none" id="error-message">
-						<h2>Oops, your message didn't sent</h2>
-						<p>Our inboxes are 24/7 ready to hear from you, if you want to ask a question or request a service just fill this 2 minutes form below which may help your life and giving you the ability to bring your vision into public just as you imagined.</p>
+						<h2><?php echo __( 'Oops, your message wasn\'t sent', 'tiny_theme') ?></h2>
+						<p><?php echo __( 'Our inboxes are 24/7 ready to hear from you, if you want to ask a question or request a service just fill this 2 minutes form below which may help your life and giving you the ability to bring your vision into public just as you imagined.', 'tiny_theme') ?></p>
 					</article>
 					<form id="ajaxContact">
 						<div>
-							<label>Your Name</label>
+							<label><?php echo __( 'Your Name', 'tiny_theme') ?></label>
 							<input name="name" type="text" placeholder="Full Name" required/>
 						</div>
 						<div>
-							<label>E-mail</label>
+							<label><?php echo __( 'E-mail', 'tiny_theme') ?></label>
 							<input name="email" type="email" placeholder="Email address" required/>
 						</div>
 						<div>
-							<label>Subject</label>
+							<label><?php echo __( 'Subject', 'tiny_theme') ?></label>
 							<input name="subject" type="text" placeholder="Message Subject" required/>
 						</div>
 						<textarea name="message"></textarea>
