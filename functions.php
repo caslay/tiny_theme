@@ -15,7 +15,8 @@
 	}
 
 	function tiny_setup(){
-		if ( ! isset( $content_width ) ){$content_width = '100%';};
+		if ( !isset( $content_width ) ){$content_width = '100%';};
+	}
 		add_theme_support('nav-menus');
 		if ( function_exists('register_nav_menus')) {
 		 register_nav_menus(
@@ -25,11 +26,8 @@
 		 );
 		}
 		//RSS Support
-		add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'automatic-feed-links' );
 	
-	}
-	
-	add_Action('after_theme_setup','tiny_setup');
 	//content limiter function
 	function content($limit) {
 		$content = explode(' ', get_the_content(), $limit);
